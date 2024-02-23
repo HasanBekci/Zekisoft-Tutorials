@@ -23,13 +23,13 @@ class AuthorServiceTest {
 	@Test
 	void getAuthorBooks1_lazyLoadException() {
 		Exception exception = assertThrows(LazyInitializationException.class, () -> authorController.getAuthorBooks1(3));
-		LOGGER.error("exception envoyée : ", exception);
+		LOGGER.error("Exception envoyée : ", exception);
 	}
 
 	@Test
 	void getAuthorBooks2_lazyLoadException() {
 		Exception exception = assertThrows(LazyInitializationException.class, () -> authorController.getAuthorBooks2(3));
-		LOGGER.error("exception envoyée : ", exception);
+		LOGGER.error("Exception envoyée : ", exception);
 	}
 
 	@Test

@@ -22,7 +22,6 @@ public class AuthorService {
 		this.authorDao = authorDao;
 	}
 
-	@Transactional
 	public Author getAuthor(long authorId) {
 
 		LOGGER.info("--- Récupération de l'auteur depuis la BDD");

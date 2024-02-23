@@ -1,5 +1,6 @@
 package com.zekisoft.tuto_lazyloadexception.controller;
 
+import com.zekisoft.tuto_lazyloadexception.model.Book;
 import com.zekisoft.tuto_lazyloadexception.service.BookService;
 
 import org.apache.logging.log4j.LogManager;
@@ -15,6 +16,10 @@ public class BookController {
 
 	public BookController(BookService bookService) {
 		this.bookService = bookService;
+	}
+
+	public Book getBook(long bookId) {
+		return bookService.getBook(bookId);
 	}
 
 	public void setBookAuthorNull(long bookId) {

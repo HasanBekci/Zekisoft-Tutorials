@@ -10,8 +10,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.stream.Collectors;
-
 @Service
 public class BookService {
 
@@ -23,6 +21,11 @@ public class BookService {
 	public BookService(BookDao bookDao, AuthorDao authorDao) {
 		this.bookDao = bookDao;
 		this.authorDao = authorDao;
+	}
+
+	public Book getBook(long bookId) {
+		LOGGER.info("--- Récupération du livre depuis la BDD");
+		return bookDao.findById(bookId).orElseThrow();
 	}
 
 	@Transactional

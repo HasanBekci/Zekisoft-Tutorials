@@ -53,7 +53,7 @@ class BookServiceTest {
 	@Test
 	void setBookAuthor4_lazyLoadException() {
 		Exception exception = assertThrows(LazyInitializationException.class, () -> bookController.setBookAuthor4(7, 2));
-		LOGGER.error("exception envoyée : ", exception);
+		LOGGER.error("Exception envoyée : ", exception);
 		bookController.setBookAuthorNull(7);
 	}
 
