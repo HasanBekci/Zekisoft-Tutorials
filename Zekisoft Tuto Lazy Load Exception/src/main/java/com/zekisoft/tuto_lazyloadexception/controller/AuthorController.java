@@ -1,20 +1,21 @@
 package com.zekisoft.tuto_lazyloadexception.controller;
 
+import com.zekisoft.tuto_lazyloadexception.model.Author;
 import com.zekisoft.tuto_lazyloadexception.service.AuthorService;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class AuthorController {
 
-	private static final Logger LOGGER =  LogManager.getLogger(AuthorController.class);
-
 	private final AuthorService authorService;
 
 	public AuthorController(AuthorService authorService) {
 		this.authorService = authorService;
+	}
+
+	public Author getAuthor(long authorId) {
+		return authorService.getAuthor(authorId);
 	}
 
 	public String getAuthorBooks1(long authorId) {

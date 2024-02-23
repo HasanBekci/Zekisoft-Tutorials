@@ -2,6 +2,8 @@ package com.zekisoft.tuto_lazyloadexception.service;
 
 import com.zekisoft.tuto_lazyloadexception.controller.AuthorController;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.LazyInitializationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,17 +15,21 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 class AuthorServiceTest {
 
+	private static final Logger LOGGER =  LogManager.getLogger(AuthorServiceTest.class);
+
 	@Autowired
 	private AuthorController authorController;
 
 	@Test
 	void getAuthorBooks1_lazyLoadException() {
-		assertThrows(LazyInitializationException.class, () -> authorController.getAuthorBooks1(3));
+		Exception exception = assertThrows(LazyInitializationException.class, () -> authorController.getAuthorBooks1(3));
+		LOGGER.error("exception envoyée : ", exception);
 	}
 
 	@Test
 	void getAuthorBooks2_lazyLoadException() {
-		assertThrows(LazyInitializationException.class, () -> authorController.getAuthorBooks2(3));
+		Exception exception = assertThrows(LazyInitializationException.class, () -> authorController.getAuthorBooks2(3));
+		LOGGER.error("exception envoyée : ", exception);
 	}
 
 	@Test

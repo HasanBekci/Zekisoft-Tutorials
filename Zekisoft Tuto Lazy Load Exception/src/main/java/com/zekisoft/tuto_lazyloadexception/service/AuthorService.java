@@ -24,9 +24,14 @@ public class AuthorService {
 
 	@Transactional
 	public Author getAuthor(long authorId) {
+
+		LOGGER.info("--- Récupération de l'auteur depuis la BDD");
 		var author = authorDao.findById(authorId).orElseThrow();
+
 //		author.getBooks().size(); // A éviter
+
 		return author;
+
 	}
 
 	public String getAuthorBooks1(Author author) {

@@ -12,7 +12,7 @@ public class Book {
 
 	private String title;
 
-	@ManyToOne(optional = false)
+	@ManyToOne
 	private Author author;
 
 	public Long getId() {
@@ -29,6 +29,10 @@ public class Book {
 
 	public Author getAuthor() {
 		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
 
 }

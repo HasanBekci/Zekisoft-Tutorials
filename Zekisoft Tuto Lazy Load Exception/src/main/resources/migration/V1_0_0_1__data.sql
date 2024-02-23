@@ -6,11 +6,12 @@ insert into author values
 
 insert into book values
     (1, 1, 'Discworld'),
-    (2, 2, 'The Caves of Steel'),
-    (2, 3, 'Robots and Empire'),
+    (2, 2, 'The Robots of Dawn'),
+    (2, 3, 'The Caves of Steel'),
     (3, 4, 'Ubik'),
     (3, 5, 'The Man in the High Castle'),
-    (3, 6, 'Do Androids Dream of Electric Sheep?')
+    (3, 6, 'Do Androids Dream of Electric Sheep?'),
+    (null, 7, 'Robots and Empire')
 ;
 
 
