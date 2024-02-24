@@ -8,14 +8,12 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.LazyInitializationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
-@TestInstance(TestInstance.Lifecycle.PER_METHOD)
 class BookServiceTest {
 
 	private static final Logger LOGGER =  LogManager.getLogger(BookServiceTest.class);
